@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <ul class="nav_items">
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li class="link"><a href="">CONTACT</a></li>
+                <li class="search">
+                    <label for="">SEARCH:</label>
+                    <input type="text" placeholder="search here...">
+                    <input type="button" value="Go">
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <img src="/img/heasder.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="section">
+                <div class="title"><h2>Introduction - Contact</h2></div>
+                <div class="section_items">
+                    <div class="content">Flowering plants are plants which produce flowers as their reproductive structures. They come in a great variety of shapes and sizes and include grasses, sedges, rushes, many trees, as well as familiar plants like daffodils and daisies. Flowers often, though not always, have brightly coloured petals. The flowers conceal inside them the female ovules which will be fertilised by pollen grains. The pollen grains are the male parts of the flower. Fertilised ovules develop into the seeds from which new plants will grow. The fact that the ovules are protected inside flowers has contributed greatly to the success of flowering plants.</p></div>
+                    <fieldset>
+                        <legend>Information</legend>
+
+                        <form class="form">
+                            
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required placeholder="Your name">
+                            <span class="error-message"></span>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required placeholder="Your email">
+                            <span class="error-message"></span>
+                          
+                            <label for="gender">Gender:</label>
+                            <div class="gender">
+                              <input type="radio" id="male" name="gender" value="male">
+                              <label for="male">Male</label>
+                          
+                              <input type="radio" id="female" name="gender" value="female">
+                              <label for="female">Female</label>
+                          
+                            </div>
+                          
+                            <button type="submit" class="submit">Submit</button>
+                            <button type="reset" class="reset">Reset</button>
+                          </form>
+                          
+                          
+                    </fieldset>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="aside_items">
+                    <h3>flower</h3>
+                    <img src="/img/bonghong.jpg" alt="">
+                </div>
+                <div class="aside_items">
+                    <h3>flower conference</h3>
+                    <img src="/img/hoavieng.jpg" alt="">
+                </div>
+                <div class="aside_items">
+                    <h3>flower pot</h3>
+                    <img src="/img/biinhhoa.jpg" alt="">
+                </div>
+              
+            </div>
+        </div>
+        <div class="footer">
+            <h4>22660171-Nguyễn Thanh Bình</h4>
+            <h4>DHKTPM18B-CNTT</h4>
+
+        </div>
+    </div>
+    <script>
+        
+        
+        const form = document.querySelector(".form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const nameError = document.querySelector("#name + .error-message");
+        const emailError = document.querySelector("#email + .error-message");
+        
+        
+        nameInput.addEventListener("input", () => {
+          if (nameInput.value.trim() === "") {
+            nameError.textContent = "Vui lòng nhập tên.";
+            nameError.style.display = "block";
+          } else {
+            nameError.style.display = "none";
+          }
+        });
+        
+        
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+        
+          if (emailInput.value.trim() === "") {
+            emailError.textContent = "Email is required.";
+            emailError.style.display = "block";
+          } else if (!validateEmail(emailInput.value)) {
+            emailError.textContent = "Please enter a valid email address.";
+            emailError.style.display = "block";
+          } else {
+            
+            console.log
+          }
+        });
+    </script>
+   
+</body>
+</html>
